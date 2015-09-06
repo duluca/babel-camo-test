@@ -1,0 +1,22 @@
+{
+  "name": "babel-camo-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index-compiled"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-runtime": "^5.8.20",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.2.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-sourcemaps": "^1.5.2"
+  },
+  "dependencies": {
+    "babel": "^5.8.23",
+    "camo": "^0.7.1"
+  }
+}
