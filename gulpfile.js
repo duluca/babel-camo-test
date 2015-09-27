@@ -2,12 +2,20 @@ var gulp = require("gulp");
 var sourcemaps = require("gulp-sourcemaps");
 var babel = require("gulp-babel");
 var concat = require("gulp-concat");
+var path = require('path');
 
 gulp.task("default", function () {
-    return gulp.src(["server/**/*.js", "!server/**/*-compiled.js"])
+
+    console.log('dirname', __dirname);
+    return gulp.src(["server/**/*.es7"])
         .pipe(sourcemaps.init())
-        .pipe(babel())
-        .pipe(concat("all.js"))
-        .pipe(sourcemaps.write("."))
-        .pipe(gulp.dest("dist"));
+        .pipe(babel({
+            blacklist: ['es6.classes'],
+            optional: ['es7.asyncFunctions']
+        }))
+        .pipe(sourcemaps.write('.', {
+            includeContent: false,
+            sourceRoot: '.'
+        }))
+        .pipe(gulp.dest("server"));
 });

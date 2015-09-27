@@ -1,0 +1,30 @@
+/**
+ * Created by doguhanuluca on 9/6/15.
+ */
+'use strict';
+//require("babel").transform("code", { optional: ["runtime"] });
+
+// start event loop to force process not to quit immediately
+process.stdin.resume();
+process.stdin.setEncoding('utf8');
+
+require("babel/register")({
+    blacklist: ['es6.classes'],
+    optional: ['es7.asyncFunctions']
+});
+
+var connect = require('camo').connect;
+var entryPoint = require('./entryPoint');
+
+var database;
+var uri = 'mongodb://localhost:27017/animals';
+
+async function main() {
+    console.log('connecting...');
+    database = await connect(uri);
+    console.log('connected');
+    entryPoint();
+}
+
+main();
+
