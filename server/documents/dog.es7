@@ -1,0 +1,16 @@
+/**
+ * Created by kevin on 9/27/15.
+ */
+
+var Document = require('camo').Document;
+
+class Dog extends Document {
+    constructor() {
+        super('dogs');
+
+        this.name = String;
+        this.breed = String;
+    }
+}
+
+module.exports = Dog;

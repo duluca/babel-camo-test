@@ -1,0 +1,46 @@
+/**
+ * Created by kevin on 9/27/15.
+ */
+
+var Dog = require('./documents/dog');
+
+module.exports = function() {
+    console.log('Please put in "s" or "q"');
+
+    // async function on event execution
+    process.stdin.on('data', async function (text) {
+        switch (text[0].toLowerCase()) {
+            case 'q':
+                done();
+                break;
+            case 's':
+                await saveLassie();
+                break;
+            default:
+                console.log('Unrecognized input');
+                console.log('Please put in "s" or "q"');
+                break;
+        }
+    });
+
+    function done() {
+        console.log('Exiting...');
+        process.exit();
+    }
+
+
+    async function saveLassie() {
+        var lassie = Dog.create({
+            name: 'Lassie',
+            breed: 'Collie'
+        });
+        let l = await lassie.save();
+        console.log(l.id);
+
+        let lOne = await Dog.loadOne({name: 'Lassie'});
+
+        console.log('Got Lassie!');
+        console.log('Her unique ID is', lOne.id);
+    }
+};
+
