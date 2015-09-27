@@ -16,6 +16,7 @@ To enable debugging, create a run configuration for Node, where:
  - the JavaScript file is "index.js"
 
 
-*WARNING!*
+* * * *WARNING!* * * *
+======================
 You MUST use the --harmony_proxies node flag when running the application, or it will SILENTLY FAIL!
 You can also run npm start, which has the flag already set.
