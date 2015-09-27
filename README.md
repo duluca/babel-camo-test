@@ -19,11 +19,15 @@ $FileDir$/$FileNameWithoutExtension$.js:$FileDir$/$FileNameWithoutExtension$.js.
 
 Right-click on any of the .es7 files and choose "Associate file type".  From the window that pops up, choose JavaScript
 
+If you want WebStorm to stop putting squiggly lines under (and complaining about) async/await:
+ go to Languages and Frameworks -> JavaScript and choose JSX Harmony as your Javascript language version.
+
+##Please run gulp before proceeding!
+
 To enable debugging, create a run configuration for Node, where:
  - the Node Parameters is ```--harmony_proxies```,
  - the working directory is the ```server``` directory, and
  - the JavaScript file is ```index.js```
-
 
 * * * *WARNING!* * * *
 ======================
