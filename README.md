@@ -2,12 +2,17 @@ A proof of concept app, showing async/await support with Babel working with Camo
 
 Setup Babel file watcher with Webstorm or use gulp to generate the transpiled file.
 
+For the Babel file watcher, create a new scope, with the following pattern:
+```
+file[babel-camo-test]:server//*.es7
+```
+
 For the Babel file watcher, use the following arguments:
 ```
 --source-maps --out-file $FileDir$/$FileNameWithoutExtension$.js $FilePath$ --optional es7.asyncFunctions --blacklist es6.classes
 ```
 
-In addition, for the Babel file watcher, the following Output paths to refresh:
+For the Babel file watcher, the following Output paths to refresh:
 ```
 $FileDir$/$FileNameWithoutExtension$.js:$FileDir$/$FileNameWithoutExtension$.js.map
 ```
