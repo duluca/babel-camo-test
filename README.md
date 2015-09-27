@@ -33,5 +33,5 @@ To enable debugging, create a run configuration for Node, where:
  - the working directory is the ```server``` directory, and
  - the JavaScript file is ```index.js```
 
-_TIP:_ If you want WebStorm to stop putting squiggly lines under (and complaining about) async/await:
+**TIP:** If you want WebStorm to stop putting squiggly lines under (and complaining about) async/await:
  go to Languages and Frameworks -> JavaScript and choose JSX Harmony as your Javascript language version.
